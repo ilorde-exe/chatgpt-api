@@ -1,7 +1,11 @@
+import Chat from "./components/Chat";
+import Sidebar from "./components/Sidebar";
+
 function App() {
   return (
     <>
-      <h1>Demo text!</h1>
+      <Sidebar />
+      <Chat />
     </>
   );
 }
