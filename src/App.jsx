@@ -4,8 +4,10 @@ import Sidebar from "./components/Sidebar";
 function App() {
   return (
     <>
-      <Sidebar />
-      <Chat />
+      <div className="flex">
+        <Sidebar />
+        <Chat />
+      </div>
     </>
   );
 }
