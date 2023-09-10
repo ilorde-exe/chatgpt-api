@@ -1,4 +1,4 @@
-import Chat from "./components/Chat";
+import Landing from "./components/Landing";
 import Sidebar from "./components/Sidebar";
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <>
       <div className="flex">
         <Sidebar />
-        <Chat />
+        <Landing />
       </div>
     </>
   );
