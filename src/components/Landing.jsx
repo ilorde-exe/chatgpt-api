@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Landing() {
+function Landing({ conditionalRender, setConditionalRender }) {
   return (
     <>
       <div className="flex flex-col w-screen">
-        <div className="flex basis-full flex-col self-center items-center justify-center px-2 h-screen">
+        <div
+          onClick={() => {
+            setConditionalRender(true);
+            console.log("fous");
+          }}
+          className="flex basis-full flex-col self-center items-center justify-center px-2 h-screen"
+        >
           <h1 className="text-2xl smd:text-4xl xl:text-4xl font-bold mb-1 py-1 smd:mb-2 text-center text-transparent bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text">
             Start making your prompts!
           </h1>
@@ -12,6 +18,7 @@ function Landing() {
             Your personalized AI chatbot
           </h3>
         </div>
+
         <div className="w-full p-4">
           <form>
             <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
@@ -24,6 +31,10 @@ function Landing() {
                   rows="4"
                   class="w-full px-0 text-m text-gray-900 bg-white border-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                   placeholder="Write your prompts here..."
+                  onFocus={() => {
+                    setConditionalRender(true);
+                    console.log("fous");
+                  }}
                   required
                 ></textarea>
               </div>
