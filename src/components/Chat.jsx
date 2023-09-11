@@ -1,6 +1,11 @@
-import React from "react";
-
+import React, { useState } from "react";
+import fetchData from "./connect";
 function Chat() {
+  const [input, setInput] = useState("");
+  const handleSend = async () => {
+    const res = await fetchData(input);
+    console.log(res);
+  };
   return (
     <>
       <div className="flex flex-col w-screen">
@@ -8,7 +13,7 @@ function Chat() {
           {/* Chat messages go here */}
         </div>
         <div className="w-full p-4">
-          <form>
+          <form onSubmit={handleSend}>
             <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
               <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
                 <label for="comment" class="sr-only">
@@ -19,6 +24,9 @@ function Chat() {
                   rows="4"
                   class="w-full px-0 text-m text-gray-900 bg-white border-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                   placeholder="Write your prompts here..."
+                  onChange={(e) => {
+                    setInput(e.target.value);
+                  }}
                   required
                 ></textarea>
               </div>
