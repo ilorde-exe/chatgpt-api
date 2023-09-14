@@ -4,7 +4,7 @@ const fetchData = async (input) => {
     "https://api.openai.com/v1/completions",
     {
       prompt: `${input}`,
-      model: 'gpt-3.5-turbo',
+      model: "gpt-3.5-turbo",
       max_tokens: 200,
       n: 1,
       stop: ".",
@@ -12,7 +12,7 @@ const fetchData = async (input) => {
     {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer $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`,
+        Authorization: `Bearer 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`,
       },
     }
   );
